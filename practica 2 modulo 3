@@ -1,0 +1,62 @@
+touch 1er_script.sh
+sudo vi 1er_script.sh
+#!/bin/bash
+
+USUARIO=#$ 20240946jh # obtiene el usuario actual
+
+FECHA=$(date +"%d-%m-%Y:%H:%M") # formato dd-mm-yyyy:hh:mm
+DESTINO="/home/20240946jh/backup" # directorio donde se guardara el backup
+
+ARCHIVO="backup_$USUARIO_$FECHA.tar.gz" # nombre del archivo de backup
+
+# crear el directorio de backups si no existe
+mkdir -p $DESTINO
+
+# crear el archivo comprimido con tar
+tar -czvf $DESTINO/$ARCHIVO /home/USUARIO$ 
+
+# mensaje de exito
+echo "backup de /home/$USUARIO completado!"
+echo "archivo guardado en: $DESTINO/$ARCHIVO"
+
+:wq
+
+sudo chmod +x 1er_script.sh
+ls
+./1er_script.sh
+
+cd backup/
+ls
+
+-------------------------------------
+sudo touch primer_script.sh
+ls
+sudo vi primer_script.sh
+
+#!/bin/bash
+
+echo "ingrese el nombre del archivo"
+read file_name
+
+# capturar el resultado del comando 'ifconfig'
+comando=$(ifconfig)
+
+ruta_escritorio="/home/20240946jh/Desktop"
+
+nombre_archivo="$ruta_escritorio/file_name"
+
+# crear el archivo
+
+echo "$comando" > $nombre_archivo
+
+
+ls
+
+sudo chmod +x primer_script.sh
+ls
+./primer_script.sh
+network_info
+ls
+cd /home/20240946jh/Desktop/.
+ls
+cd..
