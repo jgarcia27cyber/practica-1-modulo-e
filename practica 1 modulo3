@@ -1,0 +1,7 @@
+vi /etc/default/grub
+grub2-mkconfig -o /boot/grub2/grub.cfg
+reboot
+init=/bin/bash
+Mount -o remount, rw /
+passwd
+Touch /.autorelobe
